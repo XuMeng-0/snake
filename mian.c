@@ -5,7 +5,7 @@ int main() {
 
 	drawMap();
 
-	drawSnake();
+	testSnake();
 
 	return 0;
 }
