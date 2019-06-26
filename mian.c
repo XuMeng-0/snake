@@ -21,9 +21,7 @@ int main() {
 		moveSnake(head);
 		drawSnakeMove(head);
 
-		int hit = hitWall(head);
-
-		if (hit) {
+		if (isHitWall(head)) {
 			break;
 		}
 

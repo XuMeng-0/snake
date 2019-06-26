@@ -5,4 +5,4 @@
 */
 
 //в╡г╫еп╤о
-int hitWall(snake_t *head);
+int isHitWall(snake_t *head);
