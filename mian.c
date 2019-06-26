@@ -5,7 +5,10 @@
 #include <Windows.h>
 #include <stdio.h>
 
-int sleepTime = 500;//单位：ms
+#define HIT_WALL 1
+#define BITE_SELF 2
+
+int sleepTime = 500;    //单位：ms
 int endState = 0;       //结束原因
 
 int main() {
@@ -22,6 +25,12 @@ int main() {
 		drawSnakeMove(head);
 
 		if (isHitWall(head)) {
+			endState = HIT_WALL;
+			break;
+		}
+
+		if (isBiteSelf(head)) {
+			endState = BITE_SELF;
 			break;
 		}
 
@@ -29,7 +38,18 @@ int main() {
 	}
 
 	gotoXY(20,0);
-	printf("game over : hit wall\n");
+	switch (endState){
+		case HIT_WALL: {
+			printf("game over : hit wall\n");
+		};
+		break;
+		case BITE_SELF: {
+			printf("game over : bite self\n");
+		};
+		break;
+		default:
+			break;
+	}
 	return 0;
 }
 
