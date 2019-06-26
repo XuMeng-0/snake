@@ -6,9 +6,7 @@
 
 snake_t *head = NULL;//蛇的头结点
 
-int direction = RIGHT;//蛇的前进方向
-
-int sleepTime = 500;//单位：ms
+int direction = RIGHT;//蛇前进的方向
 
 snake_t* tail = NULL;
 
@@ -120,7 +118,6 @@ int moveSnake(snake_t* head) {
 
 //按下方向键改变蛇的移动方向
 int keyControl(void) {
-	while (1) {
 		if (GetAsyncKeyState(VK_UP) && direction != DOWN) {
 			direction = UP;
 		}
@@ -133,17 +130,5 @@ int keyControl(void) {
 		if (GetAsyncKeyState(VK_RIGHT) && direction != LEFT) {
 			direction = RIGHT;
 		}
-		moveSnake(head);
-		drawSnakeMove(head);
-		Sleep(sleepTime);
-	}
-	return 0;
-}
-
-//测试
-int testSnake() {
-	snake_t* head = initSnake();
-	drawSnake(head);
-	keyControl();
 	return 0;
 }

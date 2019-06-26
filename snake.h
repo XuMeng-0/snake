@@ -2,8 +2,8 @@
 
 //蛇节点类型声明
 typedef struct _snake_t {
-	int x;
-	int y;
+	int x;//列坐标
+	int y;//行坐标
 	struct _snake_t* next;
 }snake_t;
 
@@ -27,6 +27,3 @@ int moveSnake(snake_t* head);
 
 //按下方向键改变蛇的移动方向
 int keyControl(void);
-
-//测试
-int testSnake(void);
